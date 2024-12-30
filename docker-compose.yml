@@ -1,6 +1,6 @@
 version: '3'
 services:
-  ubuntu_cuda_12_4:
+  ubuntu_cuda_12_4_bert:
     restart: always
     build: .
     container_name: 'ubuntu_cuda_12_4_bert'
@@ -8,3 +8,12 @@ services:
     tty: true
     volumes:
       - .:/root/workspace/
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility

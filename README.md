@@ -1,6 +1,10 @@
 # Get Start
 
 ```shell
+ docker compose up --build 
+```
+
+```shell
 # Python3.10.15のインストール
 pyenv install 3.10.15
 # Python3.10.15を規定バージョンに指定
